@@ -1,0 +1,518 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    margin: 0;
+    overflow-x: hidden; /* Sayfanın kenarlarındaki kaydırmayı kapatma */
+    font-family: 'Bebas Neue';
+  }
+
+  /* ---------------- Sol Üst Logo ---------------- */
+
+  .site-logo {
+    display: flex;
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+  }
+
+  .site-logo svg {
+    width: 8em; /* Görsel genişliği */
+    height: auto; /* Otomatik yükseklik */
+    margin-right: 1em; /* Görseller arası boşluk */
+    transition: all 0.3s ease-out; /* Geçiş efekteri */
+  }
+
+  .site-logo svg:hover {
+    transform: scale(1.03); /* Hafifçe büyütme */
+  }
+
+  /* ---------------- Orta Logo ---------------- */
+
+  .special-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Genişliği sayfa genişliği kadar yap */
+    height: 100vh; /* Yüksekliği sayfa yüksekliği kadar yap */
+  }
+
+  .special-logo svg {
+      width: 390px; /* SVG boyutu */
+      height: 390px;
+      transition: all 4s ease-out; /* Geçiş efekteri */
+  }
+  
+  .special-logo svg:hover {
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.9)); /* Işıltı ve parıltı */
+    transform: scale(1.02) rotate(90deg); /* Hafifçe büyütme */
+  }
+
+  @media (max-width: 1000px) {
+    .special-logo svg {
+      width: 300px; /* SVG boyutu */
+      height: 300px;
+      transition: all 4s ease-out; /* Geçiş efekteri */
+  }
+  }
+
+  @media (max-width: 768px) {
+    .special-logo {
+      display: none;
+    }
+  }
+
+  /* ---------------- Sosyal Medya Hesapları ---------------- */
+
+  .top-right-social {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Sosyal ikonları alt alta sırala */
+  }
+  
+  .social-link {
+    text-decoration: none;
+    margin-bottom: 8px;
+  }
+  
+  .social-icon {
+    width: 18px; /* Icon boyutları */
+    height: 18px;
+    object-fit: contain; /* Görseli orantılı bir şekilde sığdır */
+    transition: transform 0.3s ease; /* İmleç üzerine geldiğinde büyüme efekti */
+  }
+  
+  .social-link:hover .social-icon {
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Işıltı ve parıltı */
+    transform: scale(1.1); /* İmleç üzerine geldiğinde büyüme oranı */
+  }
+
+
+  /* ---------------- Yazı ---------------- */
+
+  .landing-text {
+    position: fixed;
+    bottom: -10px;
+    left: 20px;
+  }
+  
+  #landing-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 0.3;
+    letter-spacing: -0.9px;
+    color: #FFF;
+  }
+
+  #landing-small-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 0.3;
+    letter-spacing: -0.9px;
+    color: #FFF;
+  }
+
+  @media (max-width: 768px) {
+    .landing-text {
+      top: 50%;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: -50px;
+    }
+    
+    #landing-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: 0.3;
+      letter-spacing: -0.9px;
+      color: #FFF;
+    }
+
+    #landing-small-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 100;
+      line-height: 0.3;
+      letter-spacing: -0.9px;
+      color: #FFF;
+    }
+  }
+
+  /* ---------------- Hakkımda Yazı ---------------- */
+
+  .us-container {
+    text-align: center;
+    max-width: 900px;
+    max-height: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
+}
+
+.profile-picture {
+    position: relative; /* Değişiklik burada */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-picture img {
+    width: 100px;
+    border-radius: 5%;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+  text-align: center;
+  font-size: 20px; /* İstenilen font boyutunu ayarlayın */
+  color: #ffffff; /* İstenilen metin rengini ayarlayın */
+}
+
+.profile-title {
+  text-align: center;
+  font-size: 18px; /* İstenilen font boyutunu ayarlayın */
+  font-style: italic; /* İstenilen stilini ayarlayın */
+  color: #ffffff; /* İstenilen metin rengini ayarlayın */
+}
+
+.profile-description {
+  text-align: justify; /* Metni sağa ve sola dayalı yapar */
+  font-size: 16px; /* İstenilen font boyutunu ayarlayın */
+  color: #ffffff; /* İstenilen metin rengini ayarlayın */
+  margin-top: 20px; /* İstenilen boşluğu ayarlayın */
+}
+  /* ---------------- Partnerler Yazı ---------------- */
+
+  .partner-container {
+    text-align: center;
+    max-height: 80%;
+    width: 80%;
+    margin: 0 auto; /* Center on the x-axis */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center on the y-axis */
+    color: #fff;
+    overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
+}
+
+.partner-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.partner-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.partner-item {
+    width: 250px; /* Partner kutu genişliği */
+    height: 250px; /* Partner kutu yüksekliği */
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.partner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0.5px solid #fff; /* Kenar rengini ayarlayın */
+    border-radius: 8px; /* İstediğiniz köşe yuvarlama değerini ayarlayın */
+}
+
+.partner-item:hover {
+    transform: scale(1.06); /* Hafif büyüme efekti */
+}
+
+
+
+  /* ---------------- Projeler Yazı ---------------- */
+
+  .projects-container {
+    text-align: center;
+    max-height: 80%;
+    width: 80%;
+    margin: 0 auto; /* Center on the x-axis */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center on the y-axis */
+    color: #fff;
+    overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
+}
+
+.projects-title {
+    font-size: 4em;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+.projects-description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+.project-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 2;
+}
+
+.project-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(19, 19, 19, 0.65); /* Siyah filtre ekler */
+    z-index: 1;
+}
+
+.project-box p.clamp-3,
+.project-box .date,
+.project-box h2 {
+    position: relative;
+    z-index: 2;
+    color: #fff; /* Yazı rengini beyaz yapabilirsiniz */
+}
+
+.project-box:hover {
+    transform: scale(1.03); /* Hareket ettiğinde küçük bir büyüme */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Hareket ettikçe gölge ekler */
+}
+
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+
+    .project-box {
+        width: 80%;
+    }
+}
+
+  /* ---------------- İletişim Yazı ---------------- */
+
+  .contact-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; /* Ortalamak için x ekseni */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ortalamak için y ekseni */
+  }
+
+  .contact-title {
+      color: #ffffff;
+      font-size: 2em;
+      margin-bottom: 10px;
+  }
+
+  .contact-description {
+      color: #ffffff;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+  }
+
+  .contact-info {
+      display: flex;
+      justify-content: space-around;
+  }
+
+  .contact-section {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255); /* Beyaz renkli, saydam arka plan */
+    border-radius: 8px;
+    margin: 0 10px;
+    filter: blur(.1px);
+  }
+
+  .contact-section h2 {
+      color: #333;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+  }
+
+  .contact-email,
+  .contact-address {
+      color: #666;
+      font-size: 1.1em;
+  }
+
+  /* Responsive Stiller */
+  @media (max-width: 768px) {
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-description {
+        font-size: 1em;
+    }
+
+    .contact-section h2 {
+        font-size: 1.2em;
+    }
+
+    .contact-email,
+    .contact-address {
+        font-size: 0.9em;
+    }
+  }
+
+/* ---------------- Sidebar ---------------- */
+
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+
+  .overlay-toggle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    height: 150px;
+    margin: 0.95em;
+    padding: 1em;
+    border-radius: 0.5em;
+    background: rgba(255, 255, 255); /* Şeffaf beyaz arka plan */
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+  ::-webkit-scrollbar {
+      display: none;
+  }
+
+  .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 30vw;
+      height: 100vh;
+      padding: 0.75em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+      overflow: hidden;
+      pointer-events: none;
+  }
+
+  .card {
+      position: relative;
+      right: -110%;
+      padding: 1em;
+      flex: 1;
+      background: #fff;
+      color: #000;
+      border-radius: 0.5em;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  .card:nth-child(1) .card-title{
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .close-btn {
+      position: relative;
+      font-size: 60px;
+      transform: scale(0);
+      transition: transform 0.3s;
+      transform-origin: center;
+  }
+
+  .card:nth-child(1):hover .close-btn{
+      transform: scale(1);
+  }
+
+  .card-title {
+      font-size: 50px;
+      letter-spacing: -0.035em;
+  }
+
+  .card-copy {
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      font-size: 15px;
+      transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .card:hover {
+      background: #020844;
+      color: #fff;
+  }
+
+  .card:hover .card-copy {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+
+  @media(max-width:768px) {
+
+      .overlay-toggle {
+        flex-direction: center; /* Dikey düzen */
+        align-items: center; /* Metni ortala */
+        justify-content: center; /* Metni ortala */
+        background: rgba(9, 7, 70, 0.9); /* Şeffaf beyaz arka plan */
+        color: #ffffff;
+        border-radius: 10em; /* Yuvarlak köşeler */
+        width: 125px;
+        height: 125px;
+    }
+
+      .hero {
+          width: 100%;
+          top: 25%;
+      }
+
+      .sidebar {
+          width: 100vw;
+      }   
+  }
