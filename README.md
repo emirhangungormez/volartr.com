@@ -11,7 +11,7 @@ Volar Yatırım kurumsal web sitesinin geliştirildiği repository'e hoş geldin
 
 | Dal    | URL                                         |
 |--------|---------------------------------------------|
-| `main` | https://volartrtr.com                       |
+| `main` | https://volartr.com                       |
 | `dev`  | https://anticverse.github.io/volartr.com  |
 
 ### Geliştirici
